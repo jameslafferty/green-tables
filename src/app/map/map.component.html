@@ -1,0 +1,5 @@
+<agm-map  [latitude]="lat" [longitude]="lng">
+    <agm-marker *ngFor="let GT of greenTables" [latitude]="GT.lat" [longitude]="GT.lng" [markerClickable]="true" (markerClick)="redirect(GT)">
+
+    </agm-marker>
+</agm-map>
