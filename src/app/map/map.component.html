@@ -1,5 +1,8 @@
-<div [class.detail]=isDetailView>
-    <agm-map  [latitude]="lat" [longitude]="lng">
+<div>
+    <agm-map 
+        [class.detail-view]="isDetailView"
+        [latitude]="lat"
+        [longitude]="lng">
         <agm-marker *ngFor="let GT of greenTablesPos; let id=index" [latitude]="GT.lat" [longitude]="GT.lng" [markerClickable]="true" (markerClick)="redirect(id)">
 
         </agm-marker>

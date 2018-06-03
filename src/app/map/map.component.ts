@@ -1,6 +1,6 @@
 
 import { Component, OnInit } from '@angular/core'
-import { Routes, Router } from '@angular/router'
+import { Routes, Router, NavigationEnd } from '@angular/router'
 import {GreenTableService} from '../green-table/green-table.service'
 
 @Component({
@@ -18,6 +18,15 @@ export class MapComponent implements OnInit {
 
   constructor(private router: Router, public greenTableService: GreenTableService) { 
     this.greenTablesPos = greenTableService.getAllCoordinates()
+    router.events.subscribe((e) => {
+      if (e instanceof NavigationEnd) {
+        if (e.url.match('GreenTable')) {
+          this.isDetailView = true;
+          return;
+        }
+        this.isDetailView = false;
+      }
+    });
   }
   
   redirect(id) {
