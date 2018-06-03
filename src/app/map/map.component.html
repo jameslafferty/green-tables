@@ -1,5 +1,7 @@
-<agm-map  [latitude]="lat" [longitude]="lng">
-    <agm-marker *ngFor="let GT of greenTables" [latitude]="GT.lat" [longitude]="GT.lng" [markerClickable]="true" (markerClick)="redirect(GT)">
+<div [class.detail]=isDetailView>
+    <agm-map  [latitude]="lat" [longitude]="lng">
+        <agm-marker *ngFor="let GT of greenTablesPos; let id=index" [latitude]="GT.lat" [longitude]="GT.lng" [markerClickable]="true" (markerClick)="redirect(id)">
 
-    </agm-marker>
-</agm-map>
+        </agm-marker>
+    </agm-map>
+</div>

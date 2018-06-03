@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "pregh-pages": "ng build --prod --base-href \"https://jameslafferty.github.io/green-tables/\"",
+    "pregh-pages": "ng build --prod --base-href \"https://jameslafferty.github.io/green-tables/\"", 
     "gh-pages": "angular-cli-ghpages"
   },
   "private": true,
