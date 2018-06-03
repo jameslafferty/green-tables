@@ -1,27 +1,27 @@
 
 import { Component, OnInit } from '@angular/core'
 import { Routes, Router } from '@angular/router'
+import GreenTables from '../mock-green-tables'
 
 @Component({
-  selector: 'gt-root',
-  templateUrl: 'app.component.html',
-  styleUrls: ['app.component.scss'],
+  templateUrl: 'map.component.html',
+  styleUrls: ['map.component.scss'],
 })
 
-export class AppComponent implements OnInit {
+export class MapComponent implements OnInit {
+  greenTables = GreenTables
   title: string = 'Green Tables';
-  lat: number = 36.968152;
+  lat: number = 36.968152; // Cruzio
   lng: number = -122.025850;
   constructor(private router: Router) { }
-  redirect() {
+  
+  redirect(GT) {
+    console.log(GT)
     this.router.navigate(['./GreenTable']);
   }
+
   ngOnInit(){
     //called after the constructor and called  after the first ngOnChanges() 
-  }
-
-  click() {
-    console.log('hi')
   }
 
 }
