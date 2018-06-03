@@ -5,8 +5,10 @@ import {GreenTableService} from './green-table.service';
 @Component({
   template:  `
   <div>
-    <h2>{{ name }} </h2>
+    <h1>{{ name }} </h1>
+    <h2> This will be an Awesome Description. </h2>
     <p> {{description}} </p>
+    <p> {{address}} </p>
   </div>
   `
 })
@@ -27,5 +29,9 @@ export class GreenTableComponent {
 
   get description(): string {
     return this.details['description'];
+  }
+
+  get address(): string {
+    return this.details['address'];
   }
 }
