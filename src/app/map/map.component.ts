@@ -4,6 +4,7 @@ import { Routes, Router, NavigationEnd } from '@angular/router';
 import {GreenTableService} from '../green-table/green-table.service';
 
 @Component({
+  selector: 'gt-map',
   templateUrl: 'map.component.html',
   styleUrls: ['map.component.scss'],
 })
