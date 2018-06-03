@@ -6,7 +6,7 @@ import {GreenTableService} from './green-table.service';
   template:  `
   <div>
     <h1>{{ name }} </h1>
-    <h2> This will be an Awesome Description. </h2>
+    <h2> This IS an Awesome Description. </h2>
     <p> {{description}} </p>
     <p> {{address}} </p>
   </div>
