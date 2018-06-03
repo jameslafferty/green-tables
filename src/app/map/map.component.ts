@@ -1,7 +1,7 @@
 
-import { Component, OnInit } from '@angular/core'
-import { Routes, Router } from '@angular/router'
-import GreenTables from '../mock-green-tables'
+import { Component, OnInit } from '@angular/core';
+import { Routes, Router, NavigationEnd } from '@angular/router';
+import {GreenTableService} from '../green-table/green-table.service';
 
 @Component({
   templateUrl: 'map.component.html',
@@ -9,19 +9,29 @@ import GreenTables from '../mock-green-tables'
 })
 
 export class MapComponent implements OnInit {
-  greenTables = GreenTables
-  title: string = 'Green Tables';
-  lat: number = 36.968152; // Cruzio
-  lng: number = -122.025850;
-  constructor(private router: Router) { }
-  
-  redirect(GT) {
-    console.log(GT)
-    this.router.navigate(['./GreenTable']);
+  greenTablesPos: any;
+  title = 'Green Tables';
+  lat = 36.968152; // Cruzio
+  lng = -122.025850;
+  isDetailView = false;
+
+  constructor(private router: Router, public greenTableService: GreenTableService) {
+    this.greenTablesPos = greenTableService.getAllCoordinates();
+    router.events.subscribe((e) => {
+      if (e instanceof NavigationEnd) {
+        if (e.url.match('GreenTable')) {
+          this.isDetailView = true;
+          return;
+        }
+        this.isDetailView = false;
+      }
+    });
   }
 
-  ngOnInit(){
-    //called after the constructor and called  after the first ngOnChanges() 
+  redirect(id) {
+    this.router.navigate([`./GreenTable/${id}`]);
   }
+
+  ngOnInit() {}
 
 }

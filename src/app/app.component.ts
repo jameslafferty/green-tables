@@ -1,6 +1,5 @@
-
-import { Component, OnInit } from '@angular/core'
-import { Routes, Router } from '@angular/router'
+import { Component, OnInit } from '@angular/core';
+import { Routes, Router } from '@angular/router';
 
 @Component({
   selector: 'gt-root',
@@ -9,19 +8,14 @@ import { Routes, Router } from '@angular/router'
 })
 
 export class AppComponent implements OnInit {
-  title: string = 'Green Tables';
-  lat: number = 36.968152;
-  lng: number = -122.025850;
+  title = 'Green Tables';
+  lat = 36.968152;
+  lng = -122.025850;
+
   constructor(private router: Router) { }
   redirect() {
     this.router.navigate(['./GreenTable']);
   }
-  ngOnInit(){
-    //called after the constructor and called  after the first ngOnChanges() 
-  }
 
-  click() {
-    console.log('hi')
-  }
-
+  ngOnInit() {}
 }

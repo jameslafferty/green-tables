@@ -1,7 +1,8 @@
-import { NgModule }             from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { GreenTableComponent } from './green-table/green-table.component'
-import { MapComponent } from './map/map.component'
+import { GreenTableComponent } from './green-table/green-table.component';
+import { MapComponent } from './map/map.component';
+
 const routes: Routes = [
   { path: '', redirectTo: 'map', pathMatch: 'full' },
   { path: 'GreenTable', component: GreenTableComponent },
